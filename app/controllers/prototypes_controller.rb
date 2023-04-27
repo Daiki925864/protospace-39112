@@ -3,10 +3,16 @@ class PrototypesController < ApplicationController
   end
 
   def new
-    @prototypes = Tweet.new
+    @prototype = Prototype.new
   end
 
   def create
+    @prototype = Prototype.new(prototype_params)
+    if @prototype.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
