@@ -3,6 +3,7 @@ class PrototypesController < ApplicationController
   end
 
   def new
+    @prototypes = Tweet.new
   end
 
   def create
