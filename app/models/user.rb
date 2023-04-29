@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
+  validates_length_of :password, minimum: 6
   validates :profile, presence: true
   validates :occupation, presence: true
   validates :position, presence: true
